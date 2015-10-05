@@ -50,6 +50,7 @@
 - (void)messagesInputToolbar:(JSQMessagesInputToolbar *)toolbar
        didPressLeftBarButton:(UIButton *)sender;
 
+@optional
 /**
  *  Tells the delegate that the toolbar's `textview left access` has been pressed.
  *
