@@ -51,6 +51,16 @@
 @property (strong, nonatomic) JSQMessagesKeyboardController *keyboardController;
 
 /**
+ *  暴露出来
+ **/
+@property (weak, nonatomic, readonly) NSLayoutConstraint *toolbarHeightConstraint;
+
+/**
+ *  暴露出来
+ **/
+@property (weak, nonatomic, readonly) NSLayoutConstraint *toolbarBottomLayoutGuide;
+
+/**
  *  The display name of the current user who is sending messages.
  *
  *  @discussion This value does not have to be unique. This value must not be `nil`.
