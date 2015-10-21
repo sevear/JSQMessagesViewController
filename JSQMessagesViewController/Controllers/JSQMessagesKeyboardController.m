@@ -190,9 +190,10 @@ typedef void (^JSQAnimationCompletionBlock)(BOOL finished);
     self.keyboardView = self.textView.inputAccessoryView.superview;
     [self jsq_setKeyboardViewHidden:NO];
 
-    [self jsq_handleKeyboardNotification:notification completion:^(BOOL finished) {
-        [self.panGestureRecognizer addTarget:self action:@selector(jsq_handlePanGestureRecognizer:)];
-    }];
+    //会调用多次，注释掉
+//    [self jsq_handleKeyboardNotification:notification completion:^(BOOL finished) {
+//        [self.panGestureRecognizer addTarget:self action:@selector(jsq_handlePanGestureRecognizer:)];
+//    }];
 }
 
 - (void)jsq_didReceiveKeyboardWillChangeFrameNotification:(NSNotification *)notification
@@ -204,16 +205,18 @@ typedef void (^JSQAnimationCompletionBlock)(BOOL finished);
 {
     [self jsq_setKeyboardViewHidden:NO];
 
-    [self jsq_handleKeyboardNotification:notification completion:nil];
+    //会调用多次，注释掉
+//    [self jsq_handleKeyboardNotification:notification completion:nil];
 }
 
 - (void)jsq_didReceiveKeyboardDidHideNotification:(NSNotification *)notification
 {
     self.keyboardView = nil;
 
-    [self jsq_handleKeyboardNotification:notification completion:^(BOOL finished) {
-        [self.panGestureRecognizer removeTarget:self action:NULL];
-    }];
+    //会调用多次，注释掉
+//    [self jsq_handleKeyboardNotification:notification completion:^(BOOL finished) {
+//        [self.panGestureRecognizer removeTarget:self action:NULL];
+//    }];
 }
 
 - (void)jsq_handleKeyboardNotification:(NSNotification *)notification completion:(JSQAnimationCompletionBlock)completion
