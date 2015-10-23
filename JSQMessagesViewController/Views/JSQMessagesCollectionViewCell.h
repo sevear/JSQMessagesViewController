@@ -87,6 +87,8 @@
  */
 @interface JSQMessagesCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarTopConstraint;
+
 /**
  *  The object that acts as the delegate for the cell.
  */
