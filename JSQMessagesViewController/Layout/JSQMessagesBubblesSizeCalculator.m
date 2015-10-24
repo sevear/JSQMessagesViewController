@@ -71,8 +71,10 @@
     NSCache *cache = [NSCache new];
     cache.name = @"JSQMessagesBubblesSizeCalculator.cache";
     cache.countLimit = 200;
+    //不用图片就随便取一个 min width 好了
     return [self initWithCache:cache
-            minimumBubbleWidth:[UIImage jsq_bubbleCompactImage].size.width
+//            minimumBubbleWidth:[UIImage jsq_bubbleCompactImage].size.width
+            minimumBubbleWidth:20
          usesFixedWidthBubbles:NO];
 }
 
