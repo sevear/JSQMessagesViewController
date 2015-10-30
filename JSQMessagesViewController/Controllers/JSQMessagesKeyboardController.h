@@ -59,10 +59,6 @@ FOUNDATION_EXPORT NSString * const JSQMessagesKeyboardControllerUserInfoKeyKeybo
  */
 - (void)keyboardController:(JSQMessagesKeyboardController *)keyboardController keyboardDidChangeFrame:(CGRect)keyboardFrame;
 
-@optional
-
-- (void)keyboardController:(JSQMessagesKeyboardController *)keyboardController keyboardDidFinishAnimation:(BOOL)isKeyboardVisible;
-
 @end
 
 

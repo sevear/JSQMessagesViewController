@@ -246,9 +246,6 @@ typedef void (^JSQAnimationCompletionBlock)(BOOL finished);
                          if (completion) {
                              completion(finished);
                          }
-                         if ([self.delegate respondsToSelector:@selector(keyboardController:keyboardDidFinishAnimation:)]) {
-                             [self.delegate keyboardController:self keyboardDidFinishAnimation:self.keyboardIsVisible];
-                         }
                      }];
 }
 
