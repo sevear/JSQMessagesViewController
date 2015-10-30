@@ -459,7 +459,12 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     layoutAttributes.textViewFrameInsets = self.messageBubbleTextViewFrameInsets;
     
-    layoutAttributes.textViewTextContainerInsets = self.messageBubbleTextViewTextContainerInsets;
+//    layoutAttributes.textViewTextContainerInsets = self.messageBubbleTextViewTextContainerInsets;
+    if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:insetsForTextViewTextContainerAtIndexPath:)]) {
+        layoutAttributes.textViewTextContainerInsets = [self.collectionView.delegate collectionView:self.collectionView layout:self insetsForTextViewTextContainerAtIndexPath:indexPath];
+    }else{
+        layoutAttributes.textViewTextContainerInsets = self.messageBubbleTextViewTextContainerInsets;
+    }
     
     layoutAttributes.messageBubbleFont = self.messageBubbleFont;
     

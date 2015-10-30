@@ -77,6 +77,12 @@
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
+ *  textView的ContainerInsets
+ */
+- (UIEdgeInsets)collectionView:(JSQMessagesCollectionView *)collectionView
+                        layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout insetsForTextViewTextContainerAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
  *  Notifies the delegate that the avatar image view at the specified indexPath did receive a tap event.
  *
  *  @param collectionView  The collection view object that is notifying the delegate of the tap event.
